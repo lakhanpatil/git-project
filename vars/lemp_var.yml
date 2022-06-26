@@ -1,0 +1,6 @@
+---
+mysql_root_password: "lemp#1234"
+http_host: "13.233.95.243"
+http_conf: "lemp-nginx.conf"
+http_port: "80"
+disable_default: true

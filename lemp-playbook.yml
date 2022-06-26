@@ -1,0 +1,11 @@
+---
+- name: configure lemp
+  hosts: lempstack
+  become: yes
+  become_method: sudo
+  vars_files:
+    - vars/lemp_var.yml
+  roles:
+    - nginx
+    - php-fpm
+    - mysql

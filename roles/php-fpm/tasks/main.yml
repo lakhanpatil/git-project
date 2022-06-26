@@ -1,0 +1,27 @@
+#Packages installation
+    - name: Install LEMP Packages
+      yum: name={{ item }} update_cache=yes state=latest
+      loop: [ 'php-fpm', 'php-mysql' ]
+
+# PHP Info Page
+- name: Sets Up PHP Info Page
+  template:
+    src: "files/info.php"
+    dest: "/var/www/html/info.php"
+
+
+# PHP Info Page
+- name: Sets Up PHP Info Page
+  template:
+    src: "files/index.php"
+    dest: "/var/www/html/index.php"
+
+- name: Reload Nginx
+  service:
+    name: nginx
+    state: reloaded
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
